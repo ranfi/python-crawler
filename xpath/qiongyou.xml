@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root url="http://place.qyer.com/country/" ns="http://www.w3.org/1999/xhtml"
+	charSet="utf-8">
+	<loop
+		loopXpath="//*[starts-with(@id,'continent')]/ul[@class='pl_indall_list']">
+        <loop loopXpath="li">
+            <node name="country" urlXpath="a/@href" level="1">
+                <attr name="country_name" extractXpath="//*[@class='pl_topbox_wrap']/div/div/div/p/a" />
+                <attr name="country_name_en" extractXpath="//*[@class='pl_topbox_wrap']/div/div/p/a" isLast="true"/>
+                <node name="sight" urlXpath="//*[@class='pl_main']/div/div/ul[@class='pl_sortnav clearfix']/li[1]/a/@href" level="2">
+                      <loop loopXpath="//*[@class='pl_poibox clearfix']/li[@class='item']" paginateXpath="//*[@class='ui_page']"
+                            paginateMaxXpath="//*[@class='ui_page']/a[@class='ui_page_item ui_page_next']/preceding-sibling::a[1]"
+                            paginateMaxRule="[\D]*(\d+)[\D]*" paginateUrlXpath="a[@class='ui_page_item ui_page_next']/preceding-sibling::a[1]/@href" paginateUrlRule="(\D+)">
+                          <node name="sight_details" urlXpath="div/a/@href" level="3">
+                              <attr name="small_pic_url" extractXpath="//*[@class='pl_poiphoto _jsheight']/p/a/img/@src"/>
+                              <attr name="overview" extractXpath="//*[@class='pl_wordcnt']"/>
+                              <attr name="title" extractXpath="//*[@class='pl_topbox_name']/div/p/a"/>
+                              <attr name="grade" extractXpath="//*[@class='pl_poidetail']/li/p/span/@title"/>
+                              <attr name="comments" extractXpath="//*[@class='pl_poidetail']/li/p/span[2]/a" extractRuleStr='[\D]+(\d+).*'/>
+                              <attr name="open_hours" extractXpath="//*[@class='pl_poidetail']/li/span[starts-with(text(),'开放时间：')]/following-sibling::p[1]"/>
+                              <attr name="price" extractXpath="//*[@class='pl_poidetail']/li/span[starts-with(text(),'门票：')]/following-sibling::p[1]"/>
+                              <attr name="category" extractXpath="//*[@class='pl_poidetail']/li/span[starts-with(text(),'分类：')]/following-sibling::p[1]/a"/>
+                              <attr name="lnglat" extractXpath="//*[@class='pl_smallmap']/a/img/@src" extractRuleStr="[\w:\/\.\?x=&amp;_]{1,}\|([\-0-9,\.]{2,})&amp;.*"/>
+                              <attr name="address" extractXpath="//*[@class='pl_poidetail']/li/span[starts-with(text(),'地址：')]/following-sibling::p[1]/a" isLast="true"/>
+                          </node>
+                          <!--
+                          <attr name="title" extractXpath="div[@class='title']/a"/>
+                          <attr name="grade" extractXpath="div[@class='grade']/p/@title"/>
+                          <attr name="comments" extractXpath="div[@class='grade']/p/span" isLast="true"/>
+                          -->
+                      </loop>
+                </node>
+            </node>
+        </loop>
+	</loop>
+</root>
+

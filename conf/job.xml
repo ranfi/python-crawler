@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<jobs>
+
+    <job name="qiongyou" status="Y">
+        <db host="127.0.0.1" dbName="crawler" userName="root" password="123456" port="3306"/>
+    </job>
+
+    <job name="dianping" status="N">
+        <db host="127.0.0.1" dbName="crawler" userName="root" password="123456" port="3306"/>
+    </job>
+
+</jobs>

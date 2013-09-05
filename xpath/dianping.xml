@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<root url="http://www.dianping.com/search/category/6/0/g0" ns="http://www.w3.org/1999/xhtml"
+	charSet="utf-8">
+	<loop
+		loopXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='aside aside-left']/DIV[@class='asideContainer']/UL[@class='navBlock'][1]/LI/UL[@class='bigCurrent']/LI[2]/UL/LI/A[@class='D']"
+		start="0" limit="0">
+		<node name="Cat0" urlXpath="@href">
+			<attr name="name"
+				extractXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='aside aside-left']/DIV[@class='asideContainer']/UL[@class='navBlock'][1]/LI/UL[@class='current']/LI/STRONG" />
+			<!-- <loop loopXpath="/HTML/BODY/DIV[@class='content_main']/DIV[@class='content_5t'][4]/DIV[@class='content_new']/DIV[@class='subl_zone']/DIV[@class='subl']/A[@class='font3
+				linkblack']"> <node name="xilie" urlXpath="@href"> <attr name="name" isLast="true"
+				extractXpath="." /> -->
+
+			<loop
+				loopXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='aside aside-left']/DIV[@class='asideContainer']/UL[@class='navBlock'][1]/LI[2]/UL[@class='current']/LI[2]/UL/LI/A[@class='D']"
+				start="0" limit="0">
+				<node name="cat1" urlXpath="@href">
+					<attr name="name"
+						extractXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='aside aside-left']/DIV[@class='asideContainer']/UL[@class='navBlock'][1]/LI[2]/UL/LI[2]/UL[@class='current']/LI/STRONG" />
+
+					<loop
+						loopXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='aside aside-left']/DIV[@class='asideContainer']/UL[@class='navBlock navTab-cont navTab-cont-on'][1]/LI/UL[@class='bigCurrent']/LI/UL/LI/A[@class='D']"
+						start="0" limit="0">
+						<node name="quyu" urlXpath="@href">
+							<attr name="city" value="北京" />
+							<attr name="name"
+								extractXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='aside aside-left']/DIV[@class='asideContainer']/UL[@class='navBlock'][2]/LI/UL[@class='current']/LI/STRONG" />
+
+							<loop
+								loopXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='aside aside-left']/DIV[@class='asideContainer']/UL[@class='navBlock'][2]/LI[2]/UL[@class='current']/LI[2]/UL/LI/A[@class='D']"
+								start="0" limit="0">
+								<node name="shangquan" urlXpath="@href">
+									<attr name="name"
+										extractXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='aside aside-left']/DIV[@class='asideContainer']/UL[@class='navBlock'][2]/LI[2]/UL/LI[2]/UL[@class='current']/LI/STRONG" />
+
+
+									<loop
+										loopXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='section']/DIV[@class='section-inner']/DIV[@class='box searchList searchResult searchList-v1009 listModeView']/DL/DD/UL[@class='detail']"
+										paginateXpath="/HTML/BODY/DIV[@class='main page-asa Fix']/DIV[@class='section']/DIV[@class='section-inner']/DIV[@class='box searchList searchResult searchList-v1009 listModeView']/DIV[@class='Pages']"
+										isPaginate="true" paginateMaxRule="(\d{1,2})&lt;/A.{10,100}下一页"
+										paginateUrlRule="(/[^&lt;]*?p)\d{1,2}">
+										<node name="shop" urlXpath="LI[@class='shopname']/A[@class='BL']/@href">
+												<attr name="title"
+													extractXpath="//DIV[@class='shop-info-inner Fix']/DIV[@class='shop-name']/H1" />
+												<attr name="star"
+													extractXpath="//DIV[@class='comment-rst']/SPAN/META/@content" />
+												<attr name="per_capita" extractXpath="//DL[@DT='人均']/DD" />
+												<attr name="address"
+													extractXpath="//DL[@class='shopDeal-Info-address']/DD[@class='shop-info-content']/SPAN" />
+												<attr name="phone"
+													extractXpath="//DIV[@class='desc-list']/DL[DT='电话:']/DD/STRONG" />
+												<attr name="contact" extractXpath="//DIV[@class='desc-list']/DL[DT='联系:']/DD" />
+
+												<loop loopXpath="//DIV[@class='desc-list']/DL[DT='标签:']/DD/SPAN">
+													<attr name="tags" extractXpath="A" />
+												</loop>
+												<loop loopXpath="//DIV[@class='rec-menu']/SPAN">
+													<attr name="rec" extractXpath="A" />
+												</loop>
+
+												<attr name="other_title" extractXpath="//DL[DT='别名:']/DD/SPAN[1]" />
+												<attr name="desc" extractXpath="//DL[DT='商家描述:']/DD/SPAN[1]" />
+
+												<loop loopXpath="//DIV[@class='block-inner']/DL[DT='标签:']/DD/SPAN">
+													<attr name="tags1" extractXpath="A" />
+												</loop>
+
+
+												<attr name="hour" extractXpath="//DL[DT='营业时间:']/DD/SPAN" />
+												<attr name="bus" extractXpath="//DL[DT='公交信息:']/DD/SPAN[1]" />
+												<attr name="price" extractXpath="//DL[DT='价格信息:']/DD/SPAN[1]" />
+
+												<loop loopXpath="//DL[DT='推荐产品:']/DD/SPAN">
+													<attr name="rec" extractXpath="A" />
+												</loop>
+
+												<loop loopXpath="//DL[DT='餐厅氛围:']/DD/SPAN">
+													<attr name="餐厅氛围" extractXpath="A" />
+												</loop>
+
+												<loop loopXpath="//DL[DT='餐厅特色:']/DD/SPAN">
+													<attr name="餐厅特色" extractXpath="A" />
+												</loop>
+
+												<attr name="poi" extractRule="poi:[^']'(\w*)'">
+												</attr>
+ -->
+										</node>
+									</loop>
+
+								</node>
+							</loop>
+						</node>
+					</loop>
+				</node>
+			</loop>
+		</node>
+	</loop>
+</root>

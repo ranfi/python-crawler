@@ -1,7 +1,6 @@
 python-crawler
 ==============
 
-create python crawler project
 
 1、概述
 
